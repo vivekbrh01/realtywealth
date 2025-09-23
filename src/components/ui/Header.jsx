@@ -36,6 +36,32 @@ const Header = ({ user = null }) => {
     }
   ];
 
+  const managerNavigationItems = [
+    {
+      label: 'Sales Workflow',
+      path: '/sales-workflow',
+      icon: 'TrendingUp',
+      tooltip: 'Manage active property sales and pipeline tracking'
+    },
+    {
+      label: 'Purchase Workflow',
+      path: '/purchase-workflow',
+      icon: 'ShoppingCart',
+      tooltip: 'Handle property acquisition processes and compliance'
+    },
+    {
+      label: 'Maintenance Orders',
+      path: '/maintenance-orders',
+      icon: 'Wrench',
+      tooltip: 'Coordinate property service requests and vendor management'
+    },
+    {
+      label: 'Order History',
+      path: '/order-history',
+      icon: 'History',
+      tooltip: 'Comprehensive transaction analysis and reporting'
+    }
+  ]
   const isActivePath = (path) => {
     return location?.pathname === path || location?.pathname?.startsWith(path + '/');
   };
@@ -76,25 +102,46 @@ const Header = ({ user = null }) => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-1">
-          {navigationItems?.map((item) => (
-            <button
-              key={item?.path}
-              onClick={() => handleNavigation(item?.path)}
-              className={`
+        <div className='md:flex items-center flex-col'>
+          <nav className="hidden md:flex items-center space-x-1">
+            {navigationItems?.map((item) => (
+              <button
+                key={item?.path}
+                onClick={() => handleNavigation(item?.path)}
+                className={`
                 flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-smooth
                 ${isActivePath(item?.path)
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                }
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }
               `}
-              title={item?.tooltip}
-            >
-              <Icon name={item?.icon} size={16} />
-              <span>{item?.label}</span>
-            </button>
-          ))}
-        </nav>
+                title={item?.tooltip}
+              >
+                <Icon name={item?.icon} size={16} />
+                <span>{item?.label}</span>
+              </button>
+            ))}
+          </nav>
+          <nav className="hidden md:flex items-center space-x-1">
+            {managerNavigationItems?.map((item) => (
+              <button
+                key={item?.path}
+                onClick={() => handleNavigation(item?.path)}
+                className={`
+                flex items-center space-x-2 px-4 py-2 rounded-md text-sm font-medium transition-smooth
+                ${isActivePath(item?.path)
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  }
+              `}
+                title={item?.tooltip}
+              >
+                <Icon name={item?.icon} size={16} />
+                <span>{item?.label}</span>
+              </button>
+            ))}
+          </nav>
+        </div>
 
         {/* User Profile & Mobile Menu */}
         <div className="flex items-center space-x-2">

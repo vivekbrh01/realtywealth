@@ -3,8 +3,7 @@ import Button from '../../../components/ui/Button';
 import Select from '../../../components/ui/Select';
 import Icon from '../../../components/AppIcon';
 import WorkflowTracker from './WorkflowTracker';
-const PurchaseDetailsModal = ({ isOpen, onClose, purchase, onStatusUpdate })
-=> {
+const PurchaseDetailsModal = ({ isOpen, onClose, purchase, onStatusUpdate }) => {
   const [selectedStatus, setSelectedStatus] = useState(purchase?.status || '');
   const [updateNote, setUpdateNote] = useState('');
   if (!isOpen || !purchase) return null;
@@ -31,13 +30,11 @@ const PurchaseDetailsModal = ({ isOpen, onClose, purchase, onStatusUpdate })
     {
       key: 'property-identification',
       title: 'Property Identification',
-      description: 'Identifying and shortlisting properties based on client 
-requirements',
+      description: 'Identifying and shortlisting properties based on client requirements',
       requirements: [
         { title: 'Client requirement analysis', completed: true },
         { title: 'Market research', completed: true },
-        { title: 'Property shortlisting', completed: purchase?.status !== 'property-
-identification' }
+        { title: 'Property shortlisting', completed: purchase?.status !== 'property-identification' }
       ],
       nextActions: purchase?.status === 'property-identification' ? [
         'Complete property shortlisting',
@@ -50,12 +47,9 @@ identification' }
       title: 'Due Diligence',
       description: 'Comprehensive property and market analysis',
       requirements: [
-        { title: 'Property valuation', completed: purchase?.status !== 'due-
-diligence' && purchase?.status !== 'property-identification' },
-        { title: 'Market analysis', completed: purchase?.status !== 'due-diligence' 
-&& purchase?.status !== 'property-identification' },
-        { title: 'Risk assessment', completed: purchase?.status !== 'due-diligence' 
-&& purchase?.status !== 'property-identification' }
+        { title: 'Property valuation', completed: purchase?.status !== 'due-diligence' && purchase?.status !== 'property-identification' },
+        { title: 'Market analysis', completed: purchase?.status !== 'due-diligence' && purchase?.status !== 'property-identification' },
+        { title: 'Risk assessment', completed: purchase?.status !== 'due-diligence' && purchase?.status !== 'property-identification' }
       ],
       nextActions: purchase?.status === 'due-diligence' ? [
         'Complete property valuation',
@@ -128,10 +122,10 @@ justify-center z-50">
         <div className="flex items-center justify-between p-6 border-b border-
 gray-200">
           <div>
-            <h2 className="text-xl font-semibold text-gray-900">Purchase 
-Details</h2>
-            <p className="text-sm text-gray-600">Purchase ID: 
-{purchase?.id}</p>
+            <h2 className="text-xl font-semibold text-gray-900">Purchase
+              Details</h2>
+            <p className="text-sm text-gray-600">Purchase ID:
+              {purchase?.id}</p>
           </div>
           <Button variant="ghost" size="sm" onClick={onClose}>
             <Icon name="X" size={20} />
@@ -143,8 +137,8 @@ Details</h2>
             <div className="space-y-6">
               {/* Client Information */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Client 
-Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Client
+                  Information</h3>
                 <div className="space-y-3">
                   <div>
                     <p className="text-sm text-gray-500">Client Name</p>
@@ -165,8 +159,8 @@ gray-900">{purchase?.contactNumber}</p>
               </div>
               {/* Property Information */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Property 
-Information</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Property
+                  Information</h3>
                 <div className="space-y-3">
                   <div>
                     <p className="text-sm text-gray-500">Property Title</p>
@@ -176,7 +170,7 @@ gray-900">{purchase?.propertyTitle}</p>
                   <div>
                     <p className="text-sm text-gray-500">Location</p>
                     <p className="font-medium text-gray-900">{purchase?.location}
-</p>
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Investment Amount</p>
@@ -209,9 +203,9 @@ gray-900">{purchase?.expectedCompletion}</p>
               </div>
               {/* Status Update */}
               <div className="bg-gray-50 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Update 
-Status</h3>
-  
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">Update
+                  Status</h3>
+
                 <Select
                   label="New Status"
                   options={statusOptions}
