@@ -13,28 +13,32 @@ import OrderHistory from './pages/order-history';
 import SalesWorkflow from './pages/sales-workflow';
 import MaintenanceOrders from './pages/maintenance-orders';
 import PurchaseWorkflow from './pages/purchase-workflow';
+import EmployeeDashboard from "pages/employee-dashboard";
+import NewRequestForm from "pages/new-request-form";
 
 
 const Routes = () => {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-      <ScrollToTop />
-      <RouterRoutes>
-        {/* Define your route here */}
-        <Route path="/" element={<ClientDashboard />} />
-        <Route path="/property-details" element={<PropertyDetails />} />
-        <Route path="/client-dashboard" element={<ClientDashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/employee-management" element={<EmployeeManagement />} />
-        <Route path="/property-management" element={<PropertyManagement />} />
-        <Route path="/client-onboarding" element={<ClientOnboarding />} />
-        <Route path="/order-history" element={<OrderHistory />} />
-        <Route path="/sales-workflow" element={<SalesWorkflow />} />
-        <Route path="/maintenance-orders" element={<MaintenanceOrders />} />
-        <Route path="/purchase-workflow" element={<PurchaseWorkflow />} />
-        <Route path="*" element={<NotFound />} />
-      </RouterRoutes>
+        <ScrollToTop />
+        <RouterRoutes>
+          {/* Define your route here */}
+          <Route path="/" element={<ClientDashboard />} />
+          <Route path="/property-details" element={<PropertyDetails />} />
+          <Route path="/client-dashboard" element={<ClientDashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/employee-management" element={<EmployeeManagement />} />
+          <Route path="/property-management" element={<PropertyManagement />} />
+          <Route path="/client-onboarding" element={<ClientOnboarding />} />
+          <Route path="/order-history" element={<OrderHistory />} />
+          <Route path="/sales-workflow" element={<SalesWorkflow />} />
+          <Route path="/maintenance-orders" element={<MaintenanceOrders />} />
+          <Route path="/purchase-workflow" element={<PurchaseWorkflow />} />
+          <Route path="/employee-dashboard" element={<EmployeeDashboard />} />
+          <Route path="/new-request-form" element={<NewRequestForm />} />
+          <Route path="*" element={<NotFound />} />
+        </RouterRoutes>
       </ErrorBoundary>
     </BrowserRouter>
   );
