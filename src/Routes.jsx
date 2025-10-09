@@ -19,7 +19,7 @@ import NewRequestForm from "pages/new-request-form";
 
 const Routes = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/realtywealth">
       <ErrorBoundary>
         <ScrollToTop />
         <RouterRoutes>
