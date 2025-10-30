@@ -24,7 +24,8 @@ const Routes = () => {
         <ScrollToTop />
         <RouterRoutes>
           {/* Define your route here */}
-          <Route path="/" element={<ClientDashboard />} />
+          {/* <Route path="/" element={<ClientDashboard />} /> */}
+          <Route path="/" element={<ClientOnboarding />} />
           <Route path="/property-details" element={<PropertyDetails />} />
           <Route path="/client-dashboard" element={<ClientDashboard />} />
           <Route path="/login" element={<Login />} />
