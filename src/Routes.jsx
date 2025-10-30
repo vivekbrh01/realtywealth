@@ -29,6 +29,7 @@ const Routes = () => {
           <Route path="/property-details" element={<PropertyDetails />} />
           <Route path="/client-dashboard" element={<ClientDashboard />} />
           <Route path="/login" element={<Login />} />
+
           <Route path="/employee-management" element={<EmployeeManagement />} />
           <Route path="/property-management" element={<PropertyManagement />} />
           <Route path="/client-onboarding" element={<ClientOnboarding />} />
